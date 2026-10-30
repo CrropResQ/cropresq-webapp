@@ -1,0 +1,14 @@
+# Python & Backend
+__pycache__/
+*.pyc
+.env
+
+# Model Weights (Do not push large binaries to standard Git)
+models/*.pth
+models/*.keras
+models/*.h5
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+.DS_Store
