@@ -1,0 +1,17 @@
+services:
+  backend:
+    build: .
+    container_name: cropresq-backend
+    # This completely bypasses Docker's virtual network and uses your raw host connection
+    network_mode: "host"
+    volumes:
+      - .:/app
+      - ./models:/app/models
+
+  frontend:
+    build: ./frontend
+    container_name: cropresq-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
